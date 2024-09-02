@@ -1,0 +1,775 @@
+/*
+METAS 
+[CONTEUDO]:
+1- AUMENTAR O TAMANHO DO TEXTO
+2- arrumar os tamanhos das imagens
+3- fazer o sobre.html
+4- criar/colocar uma logo
+5- COLOCAR OS TEXTOS
+6- COLOCAR UM MENU 
+7- MELHORAR ESPAÇAMENTO E OUTRAS COISAS
+8- FAZER O FOOTER
+9- TORNALO ACESSIVEL PARA O CELULAR 
+10- arrumar o botao inicio
+11 -fazer o video
+12 -conferir tudo antes de entregar e testar em outros monitores
+13 -arrumar o link para o site principal
+14 -comentar +++
+15 -aside fazer um aside com formulario
+16 -colocar cor nas linhas das tabelas de forma alternada
+17 -Gravar sobre as dificuldades encontradas no projeto
+*/
+
+/*
+SUMARIO:
+81 a 121 Cores para tabelas
+
+124 a 237 definir variavias para cores de fundo e colocar em classes que vao ser usada somentes para colocar cor no fundo de cada section
+
+241 a  275 clases para header(menu e logos e sobres), nav
+
+279 a 370 classes do 1°, 2° e 3° 'slide' e seus botoes
+
+376 a 424 clases para a secção dos esportes mais pop
+
+429 a 549 classes gerais usadas em quase todos as seccoes do main, em geral todas as classe usam:
+- display flex com justify-content: space-between; que deixa os elementos um do lado do outro so que o mais distante possivel
+
+- menos a classe o .EsportesMaisPop que deixa os elementos centralizados
+
+- as classe times1 e time2 sao usadas para deixar os elementso com padding certo
+
+- classe regioes deixa com justify-content: space-around; que deixa os elementos um do lado do outro so que com um espaço na borda mais distante
+
+552 a 585 e as classes do formulario dentro do aside
+
+589 a 601 sao as classe do footer
+
+605 a 727 sao as classe responsivas de que ate 767 px de width de tela essas serao as estilizações no site no modo celular
+
+729 a 775  sao as classe responsivas de que ate 1200px de width 
+no modo tablet
+
+*/
+
+
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    
+    line-height: 1.5;
+    color:#1F2544;
+    
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+table {
+    list-style: none; /* remove o marcador de lista padrão */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+/*sao classes que vao dar cores nas tabelas*/  
+.tabelaFutebol td{
+    background-color: #ACE1AF;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+
+.tabelaCricket td {
+    background-color: #ff9494;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+   
+} 
+.tabelaCricket li {
+    background-color: #ff9494;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.tabelaHockey  td {
+    background-color: #afe2f0;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.tabelaTenis td {
+    background-color: #9acc61;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.tabelaVolei td {
+    background-color: #fcd9b4;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+
+:root{
+    /*cores para a introdução*/
+    --cor-BGPrincipa: #000;
+    --cor-esportes-todos: #f5da71;/* Criando variaveis para recebar cores em variaveis  */
+    --cor-TodosEsportes:#FFEC9E;
+
+    /*cores para o futebol*/
+    --cor-futebol: #75a37a;
+    --cor-PrincJogadorFut:#ACE1AF;
+    --cor-textoCampeoes2: #90be92;
+    --cor-textoCampeoes: #769c77;
+
+     /*cores para o cricket*/
+    --cor-cricket: #f76f6f; /*FA7070*/
+    --cor-PrincJogadorCricket:#ff9494;
+    --cor-textoCampCricket: #da7070;
+
+    /*cores para o hockey*/
+    --cor-hockey:#32d3ff;
+    --cor-PrincJogadorHoc:#afe2f0;
+    --cor-textoCampeonatohockey:#72c2d8;
+
+    /*cores para tenis */
+    --cor-tenis:#7ac227;
+    --cor-PrincJogadorTen:#9acc61;
+    --cor-textoCampeonatoTenis:#94be64;
+    
+    /*cores para volei */
+    --cor-volei:#f8b976;
+    --cor-PrincJogadorVol:#fcd9b4;
+    --cor-cortextocampvolei:#f5ca9c;
+
+    /*cor fontes*/
+    --cor-bgFundo: #000;
+}    
+
+
+
+/*classe de cor para a introdução*/
+.corPrimSlide{
+    background-color: var(--cor-BGPrincipa);
+    color: white;
+}
+.corEsportesTodos{
+    background-color: var(--cor-esportes-todos);
+}
+.corTodosEsportes{
+    background-color: var(--cor-TodosEsportes);
+}
+
+/*classe de cor para o futebol*/
+.corFutebol{
+    background-color: var(--cor-futebol);
+}
+.corJogadorFut{
+    background-color: var(--cor-PrincJogadorFut);
+}
+.corcampeos{
+    background-color: var(--cor-textoCampeoes);
+    
+}
+.corcampeos2{
+    background-color: var(--cor-textoCampeoes2);
+}
+
+/*classe de cor para o cricket*/
+.corcricket{
+    background-color: var(--cor-cricket);
+}
+.corJogadorCric{
+    background-color: var(--cor-PrincJogadorCricket);
+}
+.cortextCricket{
+    background-color: var(--cor-textoCampCricket);
+}
+
+/*classe de cor para o hockey*/
+.corhockey{
+    background-color: var(--cor-hockey);
+}
+.corJogadorHoc{
+    background-color: var(--cor-PrincJogadorHoc);
+}
+.cortextoCamphockey{
+    background-color: var(--cor-textoCampeonatohockey);
+}
+
+/*cores para tenis */
+.cortenis{
+    background-color: var(--cor-tenis);
+}
+.corJogadorTen{
+    background-color: var(--cor-PrincJogadorTen);
+}
+.cortextCampeonatoTenis{
+    background-color: var(--cor-textoCampeonatoTenis);
+}    
+
+/*cores para volei */
+.corvolei{
+    background-color: var(--cor-volei);
+}
+.corJogadorVol{
+    background-color: var(--cor-PrincJogadorVol);
+}
+.cortextCampeonatoVolei{
+    background-color: var(--cor-cortextocampvolei);
+}  
+
+
+/*cor fundo fontes*/
+.corfundoFontes{
+    background-color: var(--cor-bgFundo);
+}
+
+
+
+/*Classe para o menu*/
+header{
+    grid-area: header;
+    background-color:#000;
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+header a{
+    color: white;
+    text-decoration: none;
+}
+
+
+.containerMenuSuperior a:hover{
+    font-weight: 500;
+    color: white;
+    transition: 0.4s;
+}
+.containerMenuSuperior img:hover{
+    width: 60px;
+    height: 60px;
+    transition: 0.4s;
+
+}
+.logo{
+    padding: 25px 35px 20px 35px;
+}
+
+.sobre{
+    padding: 30px 35px 10px 35px;
+}        
+
+
+
+main{
+    grid-area: main;
+}
+
+h1{
+    font-size: 40px;
+}
+
+
+
+/*classes para os botoes Inicio E fontes*/
+.botaoToInicio{
+    position: fixed;
+    bottom: 20%;
+    right: 2%;
+    height: 65px;
+    width: 70px;    
+    background-color: #000;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.botaoToFinal{
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    height: 65px;
+    width: 70px;    
+    background-color: #000;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+a button{
+    text-decoration: none;
+    color: white;
+}
+a button:hover{
+    font-size: 20px;    
+    height: 75px;
+    width: 80px;   
+    transition: 0.4s;
+}
+
+
+
+/*classes dos primeiros slides*/
+.primSlide{
+    display: flex;
+    justify-content: center;
+    padding: 0% 5% 20%;
+
+}
+.primSlide h1{
+    font-size: 64px;
+} 
+.primSlide p{
+    font-size: 32px;
+    color: white;   
+    text-align: center;
+} 
+
+
+
+/*botoes Historia e Esportes*/
+.itensLado a{
+    text-decoration: none;
+    color: #000;
+ 
+}
+.itensLado button{
+    background-color: #fff;
+    font-size: 20px;
+    color: #000;
+    height: 50px;
+    width: 200px;
+    margin: 0px 10px 0px 10px;
+    border: 1px solid black;
+    border-radius:30px;
+    text-align: center;
+}
+.itensLado button:hover{
+    background-color: #000;
+    color: #fff;
+    height: 50px;
+    width: 200px;
+    transition: 0.5s;
+    box-shadow: 0px 3px  white;
+    border: 0.5px solid white;
+}
+.PrimeiroTitulo{
+    text-align: center;
+}
+
+
+
+
+/*   classes especificas para a area de todos os mais popularies esportes*/
+.EsportesMaisPop{
+    padding: 20% 5%;
+    text-align: center;
+}
+.EsportesMaisPop h1{
+    font-size: 48px;
+    font-weight: 600;
+}
+.EsportesMaisPop a{
+    text-decoration: none;
+    color:#000;
+}
+.containerDosEsportesMaisPop{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.containerDosEsportesMaisPop p{
+    text-align: center;
+}
+/* margin para todos os epsortes mais populares */
+.esportesPopulares{
+    margin: 0px 20px 0px 20px ;
+}
+/* futebol no epsortes mais populares */
+.futeboEspPop img:hover{
+    width: 300px;
+    transition: 0.5s;
+}
+/* hockey no epsortes mais populares */
+.hockeyEspPop img:hover{
+    width: 300px;
+    transition: 0.5s;
+}
+/* cricket no epsortes mais populares cricketEspPop */
+.cricketEspPop img:hover{
+    width: 300px;
+    transition: 0.5s;
+}
+/* tenis no epsortes mais populares tenisEspPop */
+.tenisEspPop img:hover{
+    width: 300px;
+    transition: 0.5s;
+}
+/* volei no epsortes mais populares voleiEspPop*/
+.voleiEspPop img:hover{
+    width: 300px;
+    transition: 0.5s;
+}
+
+
+
+
+/*classes gerais*/
+.classEspacamentoCorretoTodos{
+    display: flex;
+    justify-content: space-between;
+    padding: 20% 5%;
+}
+
+.classEspacamentoCorretoTodosPARAVOLEI_Espacamento{
+    padding: 20% 5%;
+
+}
+
+.classEspacamentoCorretoTodosPARAVOLEI{
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerLados{
+    display: flex;
+    justify-content: space-between;
+    padding: 10% 5%;
+}
+.containerLados h1{
+    font-size: 48px;
+}
+.containerLados h3{
+    font-size: 32px;
+}
+.ladoEsquerdo{
+    width: 50%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.ladoDireito{
+    width: 50%;
+    
+}
+.containerLadosEspec{
+    display: flex;
+    padding: 20% 10%;
+    justify-content: space-between;  
+}
+.containerLadosEspec h1{
+    text-align: center;
+}
+
+.containerLadosfutebol{
+    display: flex;
+    justify-content: space-between;
+    padding: 10% 5% 10% 5%;
+
+}
+.containerLadosfutebol h1{
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.times1{
+    padding:20% 0% 10% 0%;    
+}
+.times2{
+    padding:10% 0% 20% 0%;    
+}
+.times1 h3,a{
+    text-align: center;    
+    text-decoration: none;
+    color: #000;
+}
+.times2 h3{
+    text-align: center;    
+}
+
+.times{
+    padding:10% 0% 20% 0%;
+}
+.times a{
+    color:black;
+}
+.times h4{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+.times h3{
+    font-size: 25px;
+    font-weight: 600;
+    padding-left: 10%;
+
+}
+.times li,td{
+    font-size: 20px;
+    
+}
+.times p{
+    font-size: 25px;
+    font-weight: 600;
+}
+.regioes{
+    display: flex;
+    justify-content: space-around;
+    padding: 0% 5%;
+}
+
+.espacamento{
+    padding: 20% 5%;
+}
+
+.cricektCampeonato{
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 5% 0% 5%;
+}
+.cricektCampeonato table{
+    width: 100%;
+}
+.regtimes table{
+    width: 100%;
+}
+.timeTenis{
+    padding:25% 5%;
+}
+
+
+form{
+    position: fixed;
+    top: 80%;
+    left: 1%;
+    padding: 1px;
+    text-align: center;    
+    width: 200px;
+    height: 70px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    overflow: hidden; /*esconde o que esta fora do tamanho do elemento de width e height*/
+}
+form h3{
+    font-size: 15px;
+    color: white;
+}
+
+#email{
+    height: 30px;
+    color: #000;
+    border: #000 1px solid;
+}
+#submit{
+    height: 35px;   
+    color: black;
+    border: #000 1px solid;
+}
+
+form:hover{
+    transition: 0.3s;
+    width: 300px;
+    height: 100px;
+}
+
+
+
+footer{
+    grid-area: footer;
+    display: flex;
+    justify-content: space-between;
+    padding: 10% 5%;
+    color: white;
+    background-color: #000;
+}
+
+
+footer a{
+    color: white;
+}
+
+
+
+@media (max-width: 767px) {
+    
+    .botaoToInicio{
+        bottom: 20%;
+        height: 45px;
+        width: 50px;    
+        
+    }
+
+    .botaoToFinal{
+        
+        height: 45px;
+        width: 50px;    
+    }
+
+    a button:hover{
+        font-size: 20px;
+        height: 55px;
+        width: 60px;   
+        transition: 0.4s;
+    }
+
+
+    li{
+        list-style-type: none    
+    }
+    .classEspacamentoCorretoTodos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20% 20% 20% 13%;
+        width: 140%;
+    }
+    .classEspacamentoCorretoTodos img{
+        margin-left: 0%;
+    }
+    .containerDosEsportesMaisPop{    
+        display: flex;
+        flex-direction: column;
+    }
+    .containerLadosfutebol{
+        display: flex;
+        flex-direction: column;
+    }
+    .containerLadosEspec{
+        width: 70%;
+        padding: 20% 20% 20% 13%;
+    }
+    .times1{
+        width: 70%;
+        padding: 20% 20% 20% 13%;
+        
+    }
+    .times1 table{
+        width: 100%;
+    }
+    .times1 h4{
+        text-align: center;
+    }
+    .times2{
+        width: 70%;
+        padding: 20% 20% 20% 13%;
+        
+    }
+    .times2 table{
+        width: 100%;
+    }
+    .times2 h4{
+        text-align: center;
+    }
+    .regioes{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .regtimes table{
+        width: 100%;
+    }
+    
+    .soParaDeixarNoMeio{
+        text-align: center;
+    }
+    .espacamentoCorrigidoparaMobile{
+        padding: 20% 5%;
+
+    }
+
+   
+    
+    .containerLados{
+        display: flex;
+        flex-direction: column;
+        padding: 20% 20% 20% 13%;
+
+    }
+    .ladoDireito img{
+        padding: 0% 10%;
+    }
+    .ladoEsquerdo img{
+        padding: 0% 10%;
+    }
+    ul{
+        padding-left: 0px;
+    }
+    .classEspacamentoCorretoTodosPARAVOLEI_Espacamento{
+        padding: 20% 20% 20% 13%;
+        
+    }
+    .classEspacamentoCorretoTodosPARAVOLEI{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 200%;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20% 20% 20% 13%;
+        width: 140%;
+    }
+}
+
+@media (max-width:1200px) {
+
+    .botaoToInicio{
+        bottom: 20%;
+        height: 45px;
+        width: 50px;    
+        
+    }
+
+    .botaoToFinal{
+        
+        height: 45px;
+        width: 50px;    
+    }
+
+    a button:hover{
+        font-size: 20px;
+        height: 55px;
+        width: 60px;   
+        transition: 0.4s;
+    }
+
+    .containerDosEsportesMaisPop{    
+        display: flex;
+        flex-direction: column;
+    }
+    .classEspacamentoCorretoTodosPARAVOLEI_Espacamento{
+        padding: 20% 20% 20% 13%;
+        
+    }
+    .classEspacamentoCorretoTodosPARAVOLEI{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 200%;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20% 20% 20% 15%;
+        width: 140%;
+    }
+    footer h3{
+        text-align: center;
+    }
+}

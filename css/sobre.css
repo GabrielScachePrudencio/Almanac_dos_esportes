@@ -1,0 +1,137 @@
+body{
+    background: linear-gradient(90deg,#211951,#7e0d86);
+    font-family: "Montserrat", sans-serif;
+    padding: 0;
+    margin: 0;
+
+}
+
+
+
+/*MENU*/
+header{
+    grid-area: header;
+    background-color:#000;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.containerMenu a, p{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+.containerMenu a:hover{
+    font-weight: 500;
+    color: white;
+    transition: 0.4s;
+}
+.containerMenu img:hover{
+    width: 60px;
+    height: 60px;
+    transition: 0.4s;
+
+}
+.logo{
+    padding: 60px 35px 0px 35px;
+}
+
+.sobre{
+    padding: 0px 35px 35px 35px;
+}        
+
+
+
+/*CLASSES PARA O SOBRE*/
+.containerSobre{
+    display: flex;
+    justify-content: space-around;
+    padding: 10%;
+    color: white;
+}
+.containerSobre a{
+    text-decoration: none;
+    color: white;
+}
+.containerSobre svg{
+    height: 20px;
+    color: white;
+    margin-left: 10%;
+}
+.ladoEsquerdoSobre, .ladoDireitoSobre{
+    display: flex;
+    justify-content: space-around;    
+    
+}
+
+.containerSobre img{
+    height: 250px;
+    width: 250px;
+
+}
+
+
+
+.ladoEsquerdoSobre h1{
+    font-size: 40px;
+    margin-left: 10%;
+    font-weight: 800;
+}
+.ladoEsquerdoSobre p,a {
+    font-size: 23px;
+    margin-left: 10%;
+}
+
+
+.ladoDireitoSobre h1{
+    font-size: 40px;
+    margin-left: 10%;
+}
+.ladoDireitoSobre p,a{
+    font-size: 23px;
+    margin-left: 10%;
+}
+
+
+
+@media (max-width: 767px) {
+    .containerSobre{
+        flex-direction: column;
+        padding: 10% 10% 10% 10%;
+        font-size: 20px;
+    }
+    .ladoEsquerdoSobre{
+        padding-bottom: 10%;
+    }
+    .containerSobre a{
+        font-size: 16px;
+
+    }
+    .logo{
+        padding: 50px 35px 10px 35px;
+    }
+    .sobre{
+        padding: 0px 35px 10px 35px;
+    }    
+   
+}
+
+@media (max-width:1023px) {
+    .ladoEsquerdoSobre{
+        display: flex;
+        flex-direction: column;
+        margin-left: 6%;
+    }
+    .ladoDireitoSobre{
+        flex-direction: column;
+    }
+    .containerSobre a{
+        font-size: 20px;
+    }
+    .containerSobre h1{
+        font-size: 30px;
+    }
+}
